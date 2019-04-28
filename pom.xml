@@ -35,14 +35,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-gcp-starter</artifactId>
-      <version>1.0.0.RELEASE</version>
-    </dependency>
-    
-	
 	</dependencies>
 
 	<build>
@@ -50,13 +42,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			
-		<!-- Optional to run ==> mvn appengine:deploy or run -->	
-			<plugin>
-			   <groupId>com.google.cloud.tools</groupId>
-			   <artifactId>appengine-maven-plugin</artifactId>
-			   <version>1.3.2</version>
 			</plugin>
 		</plugins>
 	</build>
