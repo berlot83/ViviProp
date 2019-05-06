@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en">
+<!-- <html lang="en"> -->
+<html xmlns:th="http://www.thymeleaf.org"
+    th:with="lang=${#locale.language}" th:lang="${lang}">
+
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/favicon.ico">
@@ -69,7 +72,7 @@
                         <li>
                             <a href="mailto:info@molokotech.com">
                             <i class="fa fa-envelope"></i>
-                            info@molokotech.com
+                            <span th:text="#{index.email}">info@molokotech.com</span>
                             </a>
                         </li>
                         <li>
@@ -83,6 +86,13 @@
                             <i class="fab fa-whatsapp"></i>
                             +549-11-5318-9339
                             </a>
+                        </li>
+                        <!-- Should be unless, but if we need to add a new language is better this way -->
+                        <li th:if="${#locale.language} == 'en'">
+			            	<a th:href="@{?lang=es}"> <img src="../img/flags/flag-usa-40x25.png"> to spanish</a>
+                        </li>
+			            <li th:if="${#locale.language} == 'es'">
+			            	<a th:href="@{?lang=en}"> <img src="../img/flags/spain-flag-40x25.png"> a inglés</a>
                         </li>
                     </ul>
                 </div>
@@ -103,9 +113,9 @@
                         </div>
                         <div class="col-md-6 col-md-offset-1">
                             <div class="description">
-                                <h2>Desarrollamos tus ideas.</h2>
+                                <h2 th:text="#{index.developideas}">Desarrollamos tus ideas.</h2>
                                 <br>
-                                <h5>Somos un equipo de desarrollo sólido, con el objetivo de brindar soluciones digitales a diferentes problemáticas actuales. Convertimos tus ideas en software.</h5>
+                                <h5 th:text="#{index.developideas.content}">Somos un equipo de desarrollo sólido, con el objetivo de brindar soluciones digitales a diferentes problemáticas actuales. Convertimos tus ideas en software.</h5>
                             </div>
                             <div class="buttons">
                                 <button class="btn btn-simple btn-neutral">
@@ -124,8 +134,8 @@
             </div>
             <div class="section section-gray section-clients">
                 <div class="container text-center">
-                    <h4 class="header-text"><strong>Desarrollo de Software</strong></h4>
-                    <p>
+                    <h4 class="header-text"><strong th:text="#{index.softdevelopment}">Desarrollo de Software</strong></h4>
+                    <p th:text="#{index.softdevelopment.content}">
                    		Desarrollamos Software Cloud con las tecnologías más sólidas del mercado. Sistemas Web y mobile, para cualquier rubro, entretenimiento o empresariales, realizamos integraciones de diferentes tecnologías. 
                     </p>
                     <div class="logos">
@@ -145,9 +155,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="description">
-                               <h4 class="header-text"><strong>Multiplataforma</strong></h4>
-                                <p>Nuestras web están diseñadas para que sean accesibles en forma correcta tanto en sistemas desktop como en mobile </p>
-                                <p>Brindamos soluciones de seguridad para aquellas aplicaciones que lo necesiten .
+                               <h4 class="header-text"><strong th:text="#{index.multiplatform}">Multiplataforma</strong></h4>
+                                <p th:text="#{index.multiplatform.content1}">Nuestras web están diseñadas para que sean accesibles en forma correcta tanto en sistemas desktop como en mobile </p>
+                                <p th:text="#{index.multiplatform.content2}">Brindamos soluciones de seguridad para aquellas aplicaciones que lo necesiten.
                                 <p>
                             </div>
                         </div>
@@ -181,8 +191,8 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-md-offset-1">
-                            <h4 class="header-text"><strong>Sistemas de pago</strong><h4>
-                            <p>
+                            <h4 class="header-text"><strong th:text="#{index.integratedpayments}">Sistemas de pago</strong><h4>
+                            <p th:text="#{index.integratedpayments.content}">
                             	Experiencia en integraciones de Sistemas de pago tales como MercadoPago, Todo Pago y PayPal (APIs de pago) en las WebApp o Aplicaciones mobile.    
                             </p>
                             <a href="https://mercadopago.com.ar" class="btn btn-fill btn-info" target="_blank" data-button="info">MercadoPago</a>
@@ -194,7 +204,7 @@
             </div>
             <div class="section section-features">
                 <div class="container">
-                    <h4 class="header-text text-center"><strong>Productos Propios</strong></h4>
+                    <h4 class="header-text text-center"><strong th:text="#{index.products}">Productos Propios</strong></h4>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card card-blue">
@@ -203,7 +213,7 @@
                                 </div>
                                 <div class="text">
                                     <h4><strong><a href="https://pet-qr.com" target="_blank">Pet-QR</a></strong></h4>
-                                    <p>WebApp para la geolocalización de animales en un código QR.</p>
+                                    <p th:text="#{index.products.petqr}">WebApp para la geolocalización de animales en un código QR.</p>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +223,7 @@
                                     <img class="card-img-top" src="../img/template/examples/iconoRh150.png"/>
                                 </div>
                                 <h4><strong><a href="https://return-home.com" target="_blank">Return-Home</a></strong></h4>
-                                <p>WebApp para ayudar a retornar a sus hogares a personas con desorientación psicomotora por medio de un código QR y el almacenamiento de sus coordenadas en la Cloud, el mismo cuenta con medidas de seguridad por tratarse de personas.</p>
+                                <p th:text="#{index.products.returnhome}">WebApp para ayudar a retornar a sus hogares a personas con desorientación psicomotora por medio de un código QR y el almacenamiento de sus coordenadas en la Cloud, el mismo cuenta con medidas de seguridad por tratarse de personas.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -222,7 +232,7 @@
                                     <img class="card-img-top" src="../img/template/examples/iconoQrFactory150.png"/>
                                 </div>
                                 <h4><strong><a href="https://qr-factory.herokuapp.com" target="_blank">QR-Factory</a></strong></h4>
-                                <p>Crea códigos QR gratuitamente con nuestra herramienta sin publicidades ni PopUps molestos.</p>
+                                <p th:text="#{index.products.qrfactory}">Crea códigos QR gratuitamente con nuestra herramienta sin publicidades ni PopUps molestos.</p>
                             </div>
                         </div>
                     </div>
@@ -234,9 +244,10 @@
                         <img class ="parallax-background-image" src="../img/template/bg3.jpg"/>
                     </div>
                     <div class="info">
-                        <h1>Contáctese ya mismo por Whatsapp</h1>
-                        <a href="https://api.whatsapp.com/send?phone=5491157362930&text=Consulta%20a%20Molokotech" class="btn btn-neutral btn-lg btn-fill">Enviar Mensaje <i class="fab fa-whatsapp" style="color:LimeGreen;"></i></a>
-                        <p>Puede enviarnos un mail a <strong style="color:Gold">info@molokotech.com</strong> o directamente tocar el botón de abajo, se le abrirá su <strong style="color:LimeGreen">Whatsapp</strong> con nuestro chat, luego sólo presione enviar, en la brevedad nos comunicaremos con usted.</p>
+                        <h1 th:text="#{index.whatsapp}">Contáctese ya mismo por Whatsapp</h1>
+                        <a href="https://api.whatsapp.com/send?phone=5491157362930&text=Consulta%20a%20Molokotech" class="btn btn-neutral btn-lg btn-fill"><span th:text="#{index.sendmessage}">Enviar Mensaje</span> <i class="fab fa-whatsapp" style="color:LimeGreen;"></i></a>
+                        <p th:text="#{index.whatsapp.content}">Puede enviarnos un mail a info@molokotech.com o directamente tocar el botón de abajo, se le abrirá su Whatsapp con nuestro chat, luego sólo presione enviar, en la brevedad nos comunicaremos con usted.</p>
+                    	<p><strong style="color:Gold">info@molokotech.com </strong> <strong style="color:LimeGreen">Whatsapp</strong></p>
                     </div>
                 </div>
             </div>
@@ -245,7 +256,7 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="#" th:text="#{index.contact}">
                                 Contacto
                                 </a>
                             </li>
@@ -257,7 +268,7 @@
                         </a>
                     </div>
                     <div class="copyright">
-                        &copy; 2019 <a href="http://molokotech.com">Molokotech Team</a>, desarrollamos tus ideas.
+                        &copy; 2019 <a href="http://molokotech.com">Molokotech Team</a>, <span th:text="#{index.developideas}">desarrollamos tus ideas</span>.
                     </div>
                 </div>
             </footer>
