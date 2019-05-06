@@ -23,8 +23,7 @@ public class PageConfig implements WebMvcConfigurer {
 	@Autowired
 	ApplicationContext applicationContext;
 
-	/* Thymeleaf local config start */
-	/* Set  default lang to English, deactivate, but active if needed */
+	/* Thymeleaf local config start / Set  default lang to English, deactivate, but active if needed */
 	@Bean
 	public SessionLocaleResolver localeResolver() {
 	    SessionLocaleResolver slr = new SessionLocaleResolver();
