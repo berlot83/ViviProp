@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
@@ -23,6 +24,13 @@ public class PageConfig implements WebMvcConfigurer {
 	@Autowired
 	ApplicationContext applicationContext;
 
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/robots.txt").setViewName("robots.txt");
+		registry.addViewController("/sitemap.xml").setViewName("sitemap.xml");
+		registry.addViewController("/BingSiteAuth.xml").setViewName("BingSiteAuth.xml");
+	}
+	
 	/* Thymeleaf local config start / Set  default lang to English, deactivate, but active if needed */
 	@Bean
 	public SessionLocaleResolver localeResolver() {
