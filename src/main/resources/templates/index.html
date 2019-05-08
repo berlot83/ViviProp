@@ -92,11 +92,11 @@
                             </a>
                         </li>
                         <!-- Should be unless, but if we need to add a new language is better this way -->
-                        <li th:if="${#locale.language} == 'en'">
-			            	<a th:href="@{?lang=es}"> <img src="../img/flags/flag-usa-40x25.png"> to spanish</a>
+                        <li th:if="${#locale.language} == 'es'">
+			            	<a th:href="@{?lang=en}"> <img src="../img/flags/flag-usa-40x25.png"> English</a>
                         </li>
-			            <li th:if="${#locale.language} == 'es'">
-			            	<a th:href="@{?lang=en}"> <img src="../img/flags/spain-flag-40x25.png"> a inglés</a>
+			            <li th:if="${#locale.language} == 'en'">
+			            	<a th:href="@{?lang=es}"> <img src="../img/flags/spain-flag-40x25.png"> Español</a>
                         </li>
                     </ul>
                 </div>
