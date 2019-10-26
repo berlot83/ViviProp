@@ -1,7 +1,5 @@
 <!doctype html>
-<!-- <html lang="en"> -->
-<html xmlns:th="http://www.thymeleaf.org"
-    th:with="lang=${#locale.language}" th:lang="${lang}">
+<html xmlns:th="http://www.thymeleaf.org">
 
     <head>
         <meta charset="utf-8" />
@@ -11,21 +9,17 @@
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
 
-		<!-- Bing auth -->
-		<meta name="msvalidate.01" content="78E99D48650540E98A0BE41EB707A33F" />
-		<!-- Bing auth -->
-
 		<!-- Meta OG Start-->
-		<meta property="og:title" content="Desarrollo de Software" />
+		<meta property="og:title" content="ViviPropiedades servicios inmobiliarios" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://molokotech.com" />
-		<meta property="og:image" content="https://molokotech.herokuapp.com/img/openGraphFacebook.jpg" />
+		<meta property="og:image" content="https://molokotech.herokuapp.com/img/openGraphFacebook.png" />
 		<!-- Meta OG End -->
 		
 		<!-- Favicon start -->
-		<link rel="apple-touch-icon" sizes="180x180" href="../img/logos/cropped-favicon-192x192.png">
-		<link rel="icon" type="image/png" href="../img/logos/cropped-favicon-192x192.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="../img/logos/cropped-favicon-192x192.png" sizes="16x16">
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/logos/logo.png">
+		<link rel="icon" type="image/png" href="../img/logos/logo.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="../img/logos/logo.png" sizes="16x16">
 		<meta name="theme-color" content="#ffffff">
 		<!-- Favicon end -->
 
@@ -37,16 +31,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
         <link href="../css/pe-icon-7-stroke.css" rel="stylesheet" />
-        
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79204873-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		
-		  gtag('config', 'UA-79204873-2');
-		</script>
     </head>
     <body class="landing-page landing-page1">
         <nav class="navbar navbar-transparent navbar-top" role="navigation">
@@ -61,11 +45,10 @@
                     </button>
                     <a href="#">
                         <div class="logo-container">
-                            <div class="logo">
-                                <img src="../img/logos/logoMolokotech.png" alt="Molokotech Logo">
+                            <div>
+                                <img src="../img/logos/logo.png" alt="ViviProp" width="200px">
                             </div>
                             <div class="brand">
-                                Moloko<span style="color:Gold;">Tech</span> Team
                             </div>
                         </div>
                     </a>
@@ -74,29 +57,22 @@
                 <div class="collapse navbar-collapse" id="example" >
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="mailto:info@molokotech.com">
-                            <i class="fa fa-envelope"></i>
-                            <span th:text="#{index.email}">info@molokotech.com</span>
+                            <a href="#">
+                            <i class="fas fa-phone"></i>
+                            	11 4601-6588
                             </a>
                         </li>
                         <li>
                             <a href="#">
                             <i class="fab fa-whatsapp"></i>
-                            +549-11-5736-2930
+                            	11 4973-5711
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                            <i class="fab fa-whatsapp"></i>
-                            +549-11-5318-9339
+                            <i class="fas fa-map"></i>
+                            	Murguiondo 3854, Cap.Fed.
                             </a>
-                        </li>
-                        <!-- Should be unless, but if we need to add a new language is better this way -->
-                        <li th:if="${#locale.language} == 'es'">
-			            	<a th:href="@{?lang=en}"> <img src="../img/flags/flag-usa-40x25.png"> English</a>
-                        </li>
-			            <li th:if="${#locale.language} == 'en'">
-			            	<a th:href="@{?lang=es}"> <img src="../img/flags/spain-flag-40x25.png"> Español</a>
                         </li>
                     </ul>
                 </div>
@@ -106,31 +82,19 @@
         <div class="wrapper">
             <div class="parallax filter-gradient blue" data-color="blue">
                 <div class="parallax-background">
-                    <img class="parallax-background-image" src="../img/template/bg3.jpg">
+                    <img class="parallax-background-image" src="../img/template/ba.jpg">
                 </div>
                 <div class= "container">
                     <div class="row">
                         <div class="col-md-5 hidden-xs">
                             <div class="parallax-image">
-                                <img class="phone" src="../img/template/iphone3.png" style="margin-top: 20px"/>
                             </div>
                         </div>
                         <div class="col-md-6 col-md-offset-1">
                             <div class="description">
-                                <h2 th:text="#{index.developideas}">Desarrollamos tus ideas.</h2>
+                                <h2>Me presento.</h2>
                                 <br>
-                                <h5 th:text="#{index.developideas.content}">Somos un equipo de desarrollo sólido, con el objetivo de brindar soluciones digitales a diferentes problemáticas actuales. Convertimos tus ideas en software.</h5>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-simple btn-neutral">
-                                <i class="fab fa-apple"></i>
-                                </button>
-                                <button class="btn btn-simple btn-neutral">
-                                <i class="fab fa-android"></i>
-                                </button>
-                                <button class="btn btn-simple btn-neutral">
-                                <i class="fab fa-windows"></i>
-                                </button>
+                                <h5 style="text-align:justify;text-justify: inter-word;">Mi nombre es Viviana Perrone, brindo servicios inmobiliarios para lo cual poseo más de 15 años de experiencia en el rubro, a su vez soy Arquitecta con basta experiencia en pequeños y grandes proyectos lo cual me permite una visión más amplia a la hora de brindar mis servcicios.</h5>
                             </div>
                         </div>
                     </div>
@@ -138,106 +102,35 @@
             </div>
             <div class="section section-gray section-clients">
                 <div class="container text-center">
-                    <h4 class="header-text"><strong th:text="#{index.softdevelopment}">Desarrollo de Software</strong></h4>
-                    <p th:text="#{index.softdevelopment.content}">
-                   		Desarrollamos Software Cloud con las tecnologías más sólidas del mercado. Sistemas Web y mobile, para cualquier rubro, entretenimiento o empresariales, realizamos integraciones de diferentes tecnologías. 
+                    <h4 class="header-text"><strong>Servicios inmobiliarios</strong></h4>
+                   	<p>
+                   		<strong>
+                   			Soy un agente intermediario para celebrar con éxito diferentes tipos de negocios, tales como ventas o alquileres de inmuebles para cualquier fin, tanto sea para vivir como para utilizar profesionalmente con fines de lucro. 
+                    	</strong>
                     </p>
                     <div class="logos">
-                        <ul class="list-unstyled">
-                            <li ><img src="../img/logos/logoThymeleaf.png"/></i>
-                            <li ><img src="../img/logos/logoJava.png"/></li>
-                            <li ><img src="../img/logos/logoSpring.png"/></li>
-                            <li ><img src="../img/logos/logoPostgresql.png"/></li>
-                            <li ><img src="../img/logos/logoMongodb.png"/></li>
-                            <li ><img src="../img/logos/logoHibernate.png"/></li>
-                        </ul>
+                        <div class="buttons">
+                                <button class="btn btn-simple btn-neutral">
+                                <img alt="Cucicba" width="150px" src="../img/logos/cucicba.png">
+                                </button>
+                                <button class="btn btn-simple btn-neutral">
+                                <img alt="Cucicba" width="150px" src="../img/logos/logo-kennedy.png">
+                                </button>
+                            </div>
                     </div>
                 </div>
             </div>
             <div class="section section-presentation">
                 <div class="container text-center">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="description">
-                               <h4 class="header-text"><strong th:text="#{index.multiplatform}">Responsive</strong></h4>
-                                <p th:text="#{index.multiplatform.content1}">Nuestras web están diseñadas para que sean accesibles en forma correcta tanto en sistemas desktop como en mobile </p>
-                                <p th:text="#{index.multiplatform.content2}">Brindamos soluciones de seguridad para aquellas aplicaciones que lo necesiten.
-                                <p>
+                               <h4 class="header-text"><strong>innovación</strong></h4>
+                                <p><strong>Publico su vivienda en portales como MercadoLibre para así llegar a más gente de lo que una vidriera normalmente llegaría, a su vez brindo el servicio gratuito para mis clientes de una grabación por medio de Drones con su posterior editado para que el impacto visual sea más eficiente y la venta o alquiler más rápida.</strong></p>
                             </div>
                         </div>
-                        <div class="col-md-8 col-md-offset-1 hidden-xs">
-                            <img src="../img/template/mac.png" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section section-demo">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="description-carousel" class="carousel fade" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="item">
-                                        <img src="../img/template/examples/mpExample.png" alt="">
-                                    </div>
-                                    <div class="item active">
-                                        <img src="../img/template/examples/ppExample.png" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="../img/template/examples/mp-pp.png" alt="">
-                                    </div>
-                                </div>
-                                <ol class="carousel-indicators carousel-indicators-blue">
-                                    <li data-target="#description-carousel" data-slide-to="0" class=""></li>
-                                    <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
-                                    <li data-target="#description-carousel" data-slide-to="2" class=""></li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-md-offset-1">
-                            <h4 class="header-text"><strong th:text="#{index.integratedpayments}">Sistemas de pago</strong><h4>
-                            <p th:text="#{index.integratedpayments.content}">
-                            	Experiencia en integraciones de Sistemas de pago tales como MercadoPago, Todo Pago y PayPal (APIs de pago) en las WebApp o Aplicaciones mobile.    
-                            </p>
-                            <a href="https://mercadopago.com.ar" class="btn btn-fill btn-info" target="_blank" data-button="info">MercadoPago</a>
-                        	<a href="https://paypal.com" class="btn btn-fill btn-secondary" target="_blank" data-button="info">PayPal</a>
-                        	<a href="https://todopago.com.ar" class="btn btn-fill btn-danger" target="_blank" data-button="info">TodoPago</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section section-features">
-                <div class="container">
-                    <h4 class="header-text text-center"><strong th:text="#{index.products}">Productos Propios</strong></h4>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-blue">
-                                <div class="icon">
-	                                <img class="card-img-top" src="../img/template/examples/iconoPet150.png"/>
-                                </div>
-                                <div class="text">
-                                    <h4><strong><a href="https://pet-qr.com" target="_blank">Pet-QR</a></strong></h4>
-                                    <p th:text="#{index.products.petqr}">WebApp para la geolocalización de animales en un código QR.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-blue">
-                                <div class="icon">
-                                    <img class="card-img-top" src="../img/template/examples/iconoRh150.png"/>
-                                </div>
-                                <h4><strong><a href="https://return-home.com" target="_blank">Return-Home</a></strong></h4>
-                                <p th:text="#{index.products.returnhome}">WebApp para ayudar a retornar a sus hogares a personas con desorientación psicomotora por medio de un código QR y el almacenamiento de sus coordenadas en la Cloud, el mismo cuenta con medidas de seguridad por tratarse de personas.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-blue">
-                                <div class="icon">
-                                    <img class="card-img-top" src="../img/template/examples/iconoQrFactory150.png"/>
-                                </div>
-                                <h4><strong><a href="https://qr-factory.herokuapp.com" target="_blank">QR-Factory</a></strong></h4>
-                                <p th:text="#{index.products.qrfactory}">Crea códigos QR gratuitamente con nuestra herramienta sin publicidades ni PopUps molestos.</p>
-                            </div>
+                        <div class="col-md-7 col-md-offset-1 hidden-xs" style="position: relative;padding-bottom: 56.25%">
+                            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/wOYg1KygkXY"></iframe>
                         </div>
                     </div>
                 </div>
@@ -245,13 +138,13 @@
             <div class="section section-no-padding">
                 <div class="parallax filter-gradient blue" data-color="blue">
                     <div class="parallax-background">
-                        <img class ="parallax-background-image" src="../img/template/bg3.jpg"/>
+                        <img class ="parallax-background-image" src="../img/template/ba1.jpg"/>
                     </div>
                     <div class="info">
-                        <h1 th:text="#{index.whatsapp}">Contáctese ya mismo por Whatsapp</h1>
-                        <a href="https://api.whatsapp.com/send?phone=5491157362930&text=Consulta%20a%20Molokotech" class="btn btn-neutral btn-lg btn-fill"><span th:text="#{index.sendmessage}">Enviar Mensaje</span> <i class="fab fa-whatsapp" style="color:LimeGreen;"></i></a>
-                        <p th:text="#{index.whatsapp.content}">Puede enviarnos un mail a info@molokotech.com o directamente tocar el botón de abajo, se le abrirá su Whatsapp con nuestro chat, luego sólo presione enviar, en la brevedad nos comunicaremos con usted.</p>
-                    	<p><strong style="color:Gold">info@molokotech.com </strong> <strong style="color:LimeGreen">Whatsapp</strong></p>
+                        <h1>Contáctese por Whatsapp</h1>
+                        <a href="https://api.whatsapp.com/send?phone=5491149735711&text=Consulta%20a%20Viviana%20desde%20la%20Web" class="btn btn-neutral btn-lg btn-fill"><span th:text="#{index.sendmessage}">Enviar Mensaje</span> <i class="fab fa-whatsapp" style="color:LimeGreen;"></i></a>
+                        <p>Puede comunicarse conmigo directamente al Whatsapp tocando el siguiente botón, se le abrirá su Whatsapp con mi chat, luego sólo presione enviar junto con su consulta, así de fácil.</p>
+                    	<p><strong style="color:Gold">tutto_inmuebles@yahoo.com.ar </strong> <strong style="color:LimeGreen">Whatsapp</strong></p>
                     </div>
                 </div>
             </div>
@@ -260,24 +153,23 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#" th:text="#{index.contact}">
+                                <a href="#">
                                 Contacto
                                 </a>
                             </li>
                         </ul>
                     </nav>
                     <div class="social-area pull-right">
-                        <a class="btn btn-social btn-facebook btn-simple" target="_blank" href="https://www.facebook.com/molokotech">
+                        <a class="btn btn-social btn-facebook btn-simple" target="_blank" href="https://www.facebook.com/vivipropiedades/">
                         <i class="fab fa-facebook-square"></i> Facebook
                         </a>
                     </div>
                     <div class="copyright">
-                        &copy; 2019 <a href="http://molokotech.com">Molokotech Team</a>, <span th:text="#{index.developideas}">desarrollamos tus ideas</span>.
+                        &copy; 2019 <a href="http://molokotech.herokuapp.com">Molokotech Team</a>, <span>desarrollamos tus ideas</span>.
                     </div>
                 </div>
             </footer>
         </div>
-
     </body>
     <script src="../js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="../js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
