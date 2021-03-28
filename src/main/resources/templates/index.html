@@ -25,12 +25,24 @@
 
         <link href="../css/bootstrap.css" rel="stylesheet" />
         <link href="../css/landing-page.css" rel="stylesheet"/>
+        <!-- <link href="../css/custom-styles.css" rel="stylesheet"/> -->
 
         <!--     Fonts and icons     -->
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
         <link href="../css/pe-icon-7-stroke.css" rel="stylesheet" />
+        
+        <style type="text/css">
+        /* Set the size of the div element that contains the map */
+		#map {
+		  height: 300px;
+		  /* The height is 400 pixels */
+		  width: 100%;
+		  /* The width is the width of the web page */
+		}
+        </style>
+        
     </head>
     <body class="landing-page landing-page1">
         <nav class="navbar navbar-transparent navbar-top" role="navigation">
@@ -57,19 +69,19 @@
                 <div class="collapse navbar-collapse" id="example" >
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="#" style="text-shadow: 1px 2px 2px #000000;">
                             <i class="fas fa-phone"></i>
                             	11 4601-6588
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" style="text-shadow: 1px 2px 2px #000000;">
                             <i class="fab fa-whatsapp"></i>
                             	11 4973-5711
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" style="text-shadow: 1px 2px 2px #000000;">
                             <i class="fas fa-map"></i>
                             	Murguiondo 3854, Cap.Fed.
                             </a>
@@ -90,11 +102,11 @@
                             <div class="parallax-image">
                             </div>
                         </div>
-                        <div class="col-md-6 col-md-offset-1">
+                        <div class="col-md-6 col-md-offset-1 text-shadows">
                             <div class="description">
-                                <h2>Me presento.</h2>
+                                <h2 style="text-shadow: 1px 2px 2px #000000;">Me presento.</h2>
                                 <br>
-                                <h5 style="text-align:justify;text-justify: inter-word;">Mi nombre es Viviana Perrone, brindo servicios inmobiliarios para lo cual poseo más de 15 años de experiencia en el rubro, a su vez soy Arquitecta con basta experiencia en pequeños y grandes proyectos lo cual me permite una visión más amplia a la hora de brindar mis servcicios.</h5>
+                                <h5 style="text-align:justify;text-justify: inter-word;text-shadow: 1px 2px 2px #000000;">Mi nombre es Viviana Perrone, brindo servicios inmobiliarios para lo cual poseo más de 15 años de experiencia en el rubro, a su vez soy Arquitecta con vasta experiencia en pequeños y grandes proyectos lo cual me permite una visión más amplia a la hora de brindar mis servcicios.</h5>
                             </div>
                         </div>
                     </div>
@@ -141,13 +153,28 @@
                         <img class ="parallax-background-image" src="../img/template/ba1.jpg"/>
                     </div>
                     <div class="info">
-                        <h1>Contáctese por Whatsapp</h1>
+                        <h1 style="text-shadow: 1px 2px 2px #000000;">Contáctese por Whatsapp</h1>
                         <a href="https://api.whatsapp.com/send?phone=5491149735711&text=Consulta%20a%20Viviana%20desde%20la%20Web" class="btn btn-neutral btn-lg btn-fill"><span>Enviar Mensaje</span> <i class="fab fa-whatsapp" style="color:LimeGreen;"></i></a>
-                        <p>Puede comunicarse conmigo directamente al Whatsapp tocando el siguiente botón, se le abrirá su Whatsapp con mi chat, luego sólo presione enviar junto con su consulta, así de fácil.</p>
+                        <p style="text-shadow: 1px 2px 2px #000000;">Puede comunicarse conmigo directamente al Whatsapp tocando el siguiente botón, se le abrirá su Whatsapp con mi chat, luego sólo presione enviar junto con su consulta, así de fácil.</p>
                     	<p><strong style="color:Gold">tutto_inmuebles@yahoo.com.ar </strong> <strong style="color:LimeGreen">Whatsapp</strong></p>
                     </div>
                 </div>
             </div>
+
+                <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script th:inline="javascript" async defer>
+	    /*<![CDATA[*/
+		   	const GOOGLE_MAPS_API_KEY = /*[[${apiKey}]]*/;
+		    const script = document.createElement('script');
+		    script.src = "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY + "&libraries=places&callback=initMap";
+		    document.head.append(script);
+    	/*]]>*/
+    </script>
+    
+    
+    <script type="text/javascript" src="../js/google-maps-custom.js"></script>        
+            
             <footer class="footer">
                 <div class="container">
                     <nav class="pull-left">

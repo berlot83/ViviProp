@@ -11,5 +11,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @ComponentScan("com.viviprop.controllers")
 public class PageConfig implements WebMvcConfigurer {
-
+	
 }
